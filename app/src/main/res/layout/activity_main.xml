@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="left"
+        android:text="First quarter"
+        android:textColor="#E91E63"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#E91E63" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,20 +31,19 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="#00FF00"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#0B4B97"
             android:gravity="center"
-            android:text="Hello World!"
+            android:text="JAN"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="#00FF00"
-            android:gravity="center"
-            android:text="Hello World!"
-            android:textSize="20sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/jan" />
 
     </LinearLayout>
 
@@ -37,20 +54,106 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="#00FFFF"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#0B4B97"
             android:gravity="center"
-            android:text="Hello World!"
+            android:text="FEB"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/feb" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
         <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="#00FFFF"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#0B4B97"
             android:gravity="center"
-            android:text="Hello World!"
+            android:text="MAR"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/mar" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#FFFFFF"
+        android:gravity="left"
+        android:text="Second quarter"
+        android:textColor="#E91E63"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#E91E63" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#0B4B97"
+            android:gravity="center"
+            android:text="APR"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/apr" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#0B4B97"
+            android:gravity="center"
+            android:text="MAY"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/may" />
 
     </LinearLayout>
 
