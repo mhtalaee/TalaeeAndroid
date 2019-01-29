@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">TalaeeAndroid</string>
+    <string name="jan">JAN</string>
+    <string name="jan_desc">january month</string>
+    <string name="feb">FEB</string>
+    <string name="feb_desc">february month</string>
+    <string name="mar">MAR</string>
+    <string name="mar_desc">march month</string>
+    <string name="apr">APR</string>
+    <string name="apr_desc">april month</string>
+    <string name="may">MAY</string>
+    <string name="may_desc">may month</string>
+    <string name="first_quarter">First quarter</string>
+    <string name="second_quarter">Second quarter</string>
+
 </resources>
