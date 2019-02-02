@@ -18,22 +18,19 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="rtl"
             android:text="@string/lName_fa"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvName"
-            android:layout_width="270dp"
+            android:layout_width="240dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,22 +42,19 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="rtl"
             android:text="@string/lFamily_fa"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvFamily"
-            android:layout_width="270dp"
+            android:layout_width="240dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -72,23 +66,20 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="rtl"
             android:text="@string/lAge_fa"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvAge"
-            android:layout_width="270dp"
+            android:layout_width="240dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="ltr"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -100,23 +91,20 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="rtl"
             android:text="@string/lEmail_fa"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvEmail"
-            android:layout_width="270dp"
+            android:layout_width="240dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="ltr"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -128,23 +116,20 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="rtl"
             android:text="@string/lNumber_fa"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tvPhone"
-            android:layout_width="270dp"
+            android:layout_width="240dp"
             android:layout_height="50dp"
-            android:background="@android:color/transparent"
             android:gravity="start|center"
             android:layoutDirection="ltr"
             android:textColor="@color/intent_task_color"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -158,7 +143,8 @@
             android:layout_height="50dp"
             android:background="@color/intent_task_color"
             android:text="@string/lConfirm"
-            android:textSize="20dp" />
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>
