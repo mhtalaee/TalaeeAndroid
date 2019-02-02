@@ -13,15 +13,22 @@
     <string name="first_quarter">First quarter</string>
     <string name="second_quarter">Second quarter</string>
     <string name="lName">Name</string>
+    <string name="lName_fa">نام</string>
     <string name="enter_name">Enter Name...</string>
     <string name="lFamily">Family</string>
+    <string name="lFamily_fa">نام خانوادگی</string>
     <string name="enter_family">Enter Family...</string>
     <string name="lAge">Age</string>
+    <string name="lAge_fa">سن</string>
     <string name="enter_age">Enter Age...</string>
     <string name="lEmail">Email</string>
+    <string name="lEmail_fa">ایمیل</string>
     <string name="enter_email">Enter Email...</string>
     <string name="lNumber">Number</string>
+    <string name="lNumber_fa">تلفن</string>
     <string name="enter_phone_number">Enter Phone Number...</string>
     <string name="lOk">OK</string>
+    <string name="lConfirm">تائید</string>
+    <string name="msgSuccessfullSave">Your information saved successfully</string>
 
 </resources>
