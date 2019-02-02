@@ -139,6 +139,7 @@
             android:layout_height="50dp"
             android:background="@color/intent_task_color"
             android:text="@string/lOk"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
     </LinearLayout>
 
