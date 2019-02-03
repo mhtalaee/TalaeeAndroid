@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class IntentTaskFirstActivity extends AppCompatActivity {
+
+    private static final String[] COUNTRIES = new String[]{"Belgium", "France", "Italy", "Germany", "Spain", "Iran", "Iraq"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +39,10 @@ public class IntentTaskFirstActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+        AutoCompleteTextView textView = findViewById(R.id.countries_list);
+        textView.setAdapter(adapter);
+
     }
 }
