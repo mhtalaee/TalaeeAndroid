@@ -30,5 +30,10 @@
     <string name="lOk">OK</string>
     <string name="lConfirm">تائید</string>
     <string name="msgSuccessfullSave">Your information saved successfully</string>
+    <string name="lEdit">Edit</string>
+    <string name="lShow">Show</string>
+    <string name="lCancel">Cancel</string>
+    <string name="hello_user_guest">Hello User Guest</string>
+    <string name="userRefusedData">User refused data</string>
 
 </resources>
