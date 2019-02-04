@@ -25,7 +25,7 @@
             android:textSize="15sp" />
 
         <AutoCompleteTextView
-            android:id="@+id/countries_list"
+            android:id="@+id/etCountry"
             android:layout_width="270dp"
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
@@ -164,7 +164,18 @@
             android:background="@color/intent_task_color"
             android:text="@string/lOk"
             android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@color/intent_task_color"
+            android:text="@string/lCancel"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
+
     </LinearLayout>
 
 </LinearLayout>
