@@ -14,49 +14,46 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.talaeeandroid.content.Constant;
+import com.orhanobut.hawk.Hawk;
 
 public class IntentTaskFirstActivity extends AppCompatActivity {
 
-    private static final String[] COUNTRIES = new String[]{"Belgium", "France", "Italy", "Germany", "Spain", "Iran", "Iraq"};
+    private AutoCompleteTextView etCountry;
+    private EditText etName;
+    private EditText etFamily;
+    private EditText etAge;
+    private EditText etEmail;
+    private EditText etPhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intent_task_first);
+        Hawk.init(IntentTaskFirstActivity.this).build();
 
-        final EditText etName = findViewById(R.id.etName);
-        final EditText etFamily = findViewById(R.id.etFamily);
-        final EditText etAge = findViewById(R.id.etAge);
-        final EditText etEmail = findViewById(R.id.etEmail);
-        final EditText etPhone = findViewById(R.id.etPhone);
-        final AutoCompleteTextView etCountry = findViewById(R.id.etCountry);
+        etCountry = findViewById(R.id.etCountry);
+        etName = findViewById(R.id.etName);
+        etFamily = findViewById(R.id.etFamily);
+        etAge = findViewById(R.id.etAge);
+        etEmail = findViewById(R.id.etEmail);
+        etPhone = findViewById(R.id.etPhone);
+
         Button btnOk = findViewById(R.id.btnOk);
         Button btnCancel = findViewById(R.id.btnCancel);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, COUNTRIES);
-        AutoCompleteTextView textView = findViewById(R.id.etCountry);
-        textView.setAdapter(adapter);
+        initiateCountryList();
+        initiateForm();
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-//                Intent intent = new Intent(IntentTaskFirstActivity.this, IntentTaskSecondActivity.class);
-//                intent.putExtra(Constant.EXTRA_COUNTRY, etCountry.getText().toString());
-//                intent.putExtra(Constant.EXTRA_NAME, etName.getText().toString());
-//                intent.putExtra(Constant.EXTRA_FAMILY, etFamily.getText().toString());
-//                intent.putExtra(Constant.EXTRA_AGE, etAge.getText().toString());
-//                intent.putExtra(Constant.EXTRA_EMAIL, etEmail.getText().toString());
-//                intent.putExtra(Constant.EXTRA_PHONE, etPhone.getText().toString());
-//                startActivity(intent);
-
-                SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(IntentTaskFirstActivity.this);
-                sp.edit().putString(Constant.COUNTRY, etCountry.getText().toString()).apply();
-                sp.edit().putString(Constant.NAME, etName.getText().toString()).apply();
-                sp.edit().putString(Constant.FAMILY, etFamily.getText().toString()).apply();
-                sp.edit().putString(Constant.AGE, etAge.getText().toString()).apply();
-                sp.edit().putString(Constant.EMAIL, etEmail.getText().toString()).apply();
-                sp.edit().putString(Constant.PHONE, etPhone.getText().toString()).apply();
+                Hawk.put(Constant.COUNTRY, etCountry.getText().toString());
+                Hawk.put(Constant.NAME, etName.getText().toString());
+                Hawk.put(Constant.FAMILY, etFamily.getText().toString());
+                Hawk.put(Constant.AGE, etAge.getText().toString());
+                Hawk.put(Constant.EMAIL, etEmail.getText().toString());
+                Hawk.put(Constant.PHONE, etPhone.getText().toString());
 
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra(Constant.NAME, etName.getText().toString());
@@ -74,7 +71,22 @@ public class IntentTaskFirstActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
+
+    private void initiateCountryList() {
+        final String[] COUNTRIES = new String[]{"Belgium", "France", "Italy", "Germany", "Spain", "Iran", "Iraq"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+        etCountry.setAdapter(adapter);
+    }
+
+    private void initiateForm() {
+        Hawk.init(IntentTaskFirstActivity.this).build();
+        etCountry.setText(Hawk.get(Constant.COUNTRY,"").toString());
+        etName.setText(Hawk.get(Constant.NAME,"").toString());
+        etFamily.setText(Hawk.get(Constant.FAMILY,"").toString());
+        etAge.setText(Hawk.get(Constant.AGE,"").toString());
+        etEmail.setText(Hawk.get(Constant.EMAIL,"").toString());
+        etPhone.setText(Hawk.get(Constant.PHONE,"").toString());
+    }
+
 }

@@ -12,139 +12,172 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layoutDirection="rtl">
+        android:layout_marginBottom="3dp"
+        android:background="@color/colorAccent">
 
         <TextView
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
-            android:layoutDirection="rtl"
-            android:text="@string/lName_fa"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:text="@string/lCountry"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/tvCountry"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:gravity="start|center"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:background="@color/colorAccent"
+        >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:gravity="start|center"
+            android:text="@string/lName"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"/>
 
         <TextView
             android:id="@+id/tvName"
             android:layout_width="240dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layoutDirection="rtl">
+        android:layout_marginBottom="3dp"
+        android:background="@color/colorAccent"
+        >
 
         <TextView
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
-            android:layoutDirection="rtl"
-            android:text="@string/lFamily_fa"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:text="@string/lFamily"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"/>
 
         <TextView
             android:id="@+id/tvFamily"
             android:layout_width="240dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layoutDirection="rtl">
+        android:layout_marginBottom="3dp"
+        android:background="@color/colorAccent"
+        >
 
         <TextView
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
-            android:layoutDirection="rtl"
-            android:text="@string/lAge_fa"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:text="@string/lAge"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"/>
 
         <TextView
             android:id="@+id/tvAge"
             android:layout_width="240dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
             android:layoutDirection="ltr"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layoutDirection="rtl">
+        android:layout_marginBottom="3dp"
+        android:background="@color/colorAccent"
+        >
 
         <TextView
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
-            android:layoutDirection="rtl"
-            android:text="@string/lEmail_fa"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:text="@string/lEmail"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"/>
 
         <TextView
             android:id="@+id/tvEmail"
             android:layout_width="240dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
             android:layoutDirection="ltr"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layoutDirection="rtl">
+        android:layout_marginBottom="3dp"
+        android:background="@color/colorAccent"
+        >
 
         <TextView
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
-            android:layoutDirection="rtl"
-            android:text="@string/lNumber_fa"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
+            android:text="@string/lNumber"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingLeft="5dp"/>
 
         <TextView
             android:id="@+id/tvPhone"
             android:layout_width="240dp"
-            android:layout_height="50dp"
+            android:layout_height="30dp"
             android:gravity="start|center"
             android:layoutDirection="ltr"
-            android:textColor="@color/intent_task_color"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/btnConfirm"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="@color/intent_task_color"
-            android:text="@string/lConfirm"
             android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@color/intent_task_color"
+        android:text="@string/lBack"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        />
+
 
 </LinearLayout>
