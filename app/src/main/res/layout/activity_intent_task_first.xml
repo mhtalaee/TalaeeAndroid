@@ -20,7 +20,7 @@
             android:layout_marginBottom="10dp"
             android:background="@android:color/transparent"
             android:gravity="start|center"
-            android:text="Country"
+            android:text="@string/lCountry"
             android:textColor="@color/intent_task_color"
             android:textSize="15sp" />
 
@@ -30,7 +30,7 @@
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
             android:completionThreshold="2"
-            android:hint="Country" />
+            android:hint="@string/enter_country" />
     </LinearLayout>
 
     <LinearLayout
@@ -165,7 +165,7 @@
             android:text="@string/lOk"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginEnd="10dp"/>
 
         <Button
             android:id="@+id/btnCancel"
