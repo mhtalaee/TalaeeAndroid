@@ -15,10 +15,10 @@
         android:gravity="center"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
-        android:text="@string/hello_user_guest"
         android:layout_marginTop="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+
         />
 
     <Button
