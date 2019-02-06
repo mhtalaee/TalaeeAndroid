@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">TalaeeAndroid</string>
+    <string name="jan">JAN</string>
+    <string name="jan_desc">january month</string>
+    <string name="feb">FEB</string>
+    <string name="feb_desc">february month</string>
+    <string name="mar">MAR</string>
+    <string name="mar_desc">march month</string>
+    <string name="apr">APR</string>
+    <string name="apr_desc">april month</string>
+    <string name="may">MAY</string>
+    <string name="may_desc">may month</string>
+    <string name="first_quarter">First quarter</string>
+    <string name="second_quarter">Second quarter</string>
+    <string name="lCountry">کشور</string>
+    <string name="enter_country">کشور...</string>
+    <string name="lName">نام</string>
+    <string name="enter_name">نام...</string>
+    <string name="lFamily">نام خانوادگی</string>
+    <string name="enter_family">نام خانوادگی...</string>
+    <string name="lAge">سن</string>
+    <string name="enter_age">سن...</string>
+    <string name="lEmail">ایمیل</string>
+    <string name="enter_email">پست الکترونیک...</string>
+    <string name="lNumber">تلفن</string>
+    <string name="enter_phone_number">شماره موبایل...</string>
+    <string name="lOk">تائید</string>
+    <string name="msgSuccessfullSave">Your information saved successfully</string>
+    <string name="lEdit">ویرایش</string>
+    <string name="lShow">نمایش</string>
+    <string name="lCancel">انصراف</string>
+    <string name="hello_user_guest">Hello User Guest</string>
+    <string name="userRefusedData">کاربر اطلاعات را رد کرد</string>
+    <string name="userConfirmedData">کاربر اطلاعات را تائید کرد</string>
+    <string name="lBack">برگشت</string>
+    <string name="guest_user">کاربر مهمان</string>
+
+</resources>
