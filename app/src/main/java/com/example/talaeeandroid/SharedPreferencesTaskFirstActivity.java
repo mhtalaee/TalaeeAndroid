@@ -30,7 +30,7 @@ public class SharedPreferencesTaskFirstActivity extends AppCompatActivity {
         btnShow = findViewById(R.id.btnShow);
         tvTitleName = findViewById(R.id.tvTitleName);
 
-        tvTitleName.setText(Hawk.get(Constant.NAME,"Guest User"));
+        tvTitleName.setText(Hawk.get(Constant.NAME,getString(R.string.guest_user)));
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
