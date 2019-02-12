@@ -18,7 +18,7 @@
         android:layout_height="50dp"
         android:background="@color/intent_task_color"
         android:text="@string/lBack"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
