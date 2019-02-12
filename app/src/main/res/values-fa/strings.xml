@@ -34,5 +34,8 @@
     <string name="userConfirmedData">کاربر اطلاعات را تائید کرد</string>
     <string name="lBack">برگشت</string>
     <string name="guest_user">کاربر مهمان</string>
+    <string name="lNewUser">کاربر جدید</string>
+    <string name="lUsersList">لیست کاربران</string>
+    <string name="lClearList">پاک کردن</string>
 
 </resources>

@@ -34,5 +34,8 @@
     <string name="userConfirmedData">User confirmed data</string>
     <string name="lBack">Back</string>
     <string name="guest_user">Guest User</string>
+    <string name="lNewUser">New User</string>
+    <string name="lUsersList">Users List</string>
+    <string name="lClearList">Clear List</string>
 
 </resources>
