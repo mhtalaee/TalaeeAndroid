@@ -17,6 +17,8 @@ import com.orhanobut.hawk.Hawk;
 public class SharedPreferencesTaskFirstActivity extends AppCompatActivity {
 
     private Button btnEdit;
+    private Button btnUsersList;
+    private Button btnClearList;
     private Button btnShow;
     private TextView tvTitleName;
 
@@ -27,7 +29,9 @@ public class SharedPreferencesTaskFirstActivity extends AppCompatActivity {
         Hawk.init(SharedPreferencesTaskFirstActivity.this).build();
 
         btnEdit = findViewById(R.id.btnEdit);
-        btnShow = findViewById(R.id.btnShow);
+        btnUsersList = findViewById(R.id.btnUsersList);
+        btnClearList = findViewById(R.id.btnClearList);
+//        btnShow = findViewById(R.id.btnShow);
         tvTitleName = findViewById(R.id.tvTitleName);
 
         tvTitleName.setText(Hawk.get(Constant.NAME,getString(R.string.guest_user)));
@@ -40,13 +44,28 @@ public class SharedPreferencesTaskFirstActivity extends AppCompatActivity {
             }
         });
 
-        btnShow.setOnClickListener(new View.OnClickListener() {
+        btnUsersList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentToShowActivity = new Intent(SharedPreferencesTaskFirstActivity.this, IntentTaskSecondActivity.class);
-                startActivity(intentToShowActivity);
+                Intent intentToRecyclerViewActivity = new Intent(SharedPreferencesTaskFirstActivity.this, RecyclerViewActivity.class);
+                startActivity(intentToRecyclerViewActivity);
             }
         });
+
+        btnClearList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Hawk.deleteAll();
+            }
+        });
+
+//        btnShow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intentToShowActivity = new Intent(SharedPreferencesTaskFirstActivity.this, IntentTaskSecondActivity.class);
+//                startActivity(intentToShowActivity);
+//            }
+//        });
 
     }
 

@@ -14,7 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.talaeeandroid.content.Constant;
+import com.example.talaeeandroid.model.User;
 import com.orhanobut.hawk.Hawk;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class IntentTaskFirstActivity extends AppCompatActivity {
 
@@ -24,6 +28,8 @@ public class IntentTaskFirstActivity extends AppCompatActivity {
     private EditText etAge;
     private EditText etEmail;
     private EditText etPhone;
+
+    private ArrayList<User> usersInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +48,31 @@ public class IntentTaskFirstActivity extends AppCompatActivity {
         Button btnCancel = findViewById(R.id.btnCancel);
 
         initiateCountryList();
-        initiateForm();
+//        initiateForm();
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Hawk.put(Constant.COUNTRY, etCountry.getText().toString());
-                Hawk.put(Constant.NAME, etName.getText().toString());
-                Hawk.put(Constant.FAMILY, etFamily.getText().toString());
-                Hawk.put(Constant.AGE, etAge.getText().toString());
-                Hawk.put(Constant.EMAIL, etEmail.getText().toString());
-                Hawk.put(Constant.PHONE, etPhone.getText().toString());
+//                Hawk.put(Constant.COUNTRY, etCountry.getText().toString());
+//                Hawk.put(Constant.NAME, etName.getText().toString());
+//                Hawk.put(Constant.FAMILY, etFamily.getText().toString());
+//                Hawk.put(Constant.AGE, etAge.getText().toString());
+//                Hawk.put(Constant.EMAIL, etEmail.getText().toString());
+//                Hawk.put(Constant.PHONE, etPhone.getText().toString());
+
+
+
+                User user = new User();
+                user.setCountry(etCountry.getText().toString());
+                user.setName(etName.getText().toString());
+                user.setFamily(etFamily.getText().toString());
+                user.setAge(Integer.valueOf(etAge.getText().toString()));
+                user.setEmail(etEmail.getText().toString());
+                user.setPhone(etPhone.getText().toString());
+                usersInfo = (Hawk.contains("UsersInfoList")) ? usersInfo = Hawk.get("UsersInfoList") : new ArrayList<User>();
+                usersInfo.add(user);
+                Hawk.put("UsersInfoList",usersInfo);
 
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra(Constant.NAME, etName.getText().toString());
@@ -74,7 +93,7 @@ public class IntentTaskFirstActivity extends AppCompatActivity {
     }
 
     private void initiateCountryList() {
-        final String[] COUNTRIES = new String[]{"Belgium", "France", "Italy", "Germany", "Spain", "Iran", "Iraq"};
+        final String[] COUNTRIES = new String[]{"France", "Germany", "Spain", "Iran", "Iraq"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, COUNTRIES);
         etCountry.setAdapter(adapter);
     }
