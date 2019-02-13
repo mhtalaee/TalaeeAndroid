@@ -1,6 +1,5 @@
 package com.example.talaeeandroid;
 
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +16,15 @@ import androidx.recyclerview.widget.RecyclerView;
 public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserInfoViewHolder> {
 
     List<User> usersInfo;
+    final private ListItemClickListener mOnClickListener;
 
-    public UserInfoAdapter(List<User> usersInfo) {
+    public UserInfoAdapter(List<User> usersInfo, ListItemClickListener listener) {
         this.usersInfo = usersInfo;
+        mOnClickListener = listener;
+    }
+
+    public interface ListItemClickListener {
+        void onListItemClick(int clickedItemIndex);
     }
 
     @NonNull
@@ -43,7 +48,6 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
         } catch (NoSuchFieldException | IllegalAccessException e) {
             holder.imgCountry.setImageResource(R.drawable.usa);
         }
-
     }
 
     @Override
@@ -51,7 +55,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
         return (usersInfo != null) ? usersInfo.size() : 0;
     }
 
-    class UserInfoViewHolder extends RecyclerView.ViewHolder {
+    class UserInfoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvUserInfoName;
         TextView tvUserInfoFamily;
@@ -64,6 +68,13 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
             tvUserInfoFamily = itemView.findViewById(R.id.tvUserInfoFamily);
             imgCountry = itemView.findViewById(R.id.imgCountry);
             tvUserInfoAge = itemView.findViewById(R.id.tvUserInfoAge);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int clickedPosition = getAdapterPosition();
+            mOnClickListener.onListItemClick(clickedPosition);
         }
     }
 }

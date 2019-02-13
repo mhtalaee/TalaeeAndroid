@@ -12,7 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.talaeeandroid.content.Constant;
+import com.example.talaeeandroid.model.User;
 import com.orhanobut.hawk.Hawk;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class IntentTaskSecondActivity extends AppCompatActivity {
 
@@ -38,12 +42,17 @@ public class IntentTaskSecondActivity extends AppCompatActivity {
         tvPhone = findViewById(R.id.tvPhone);
         btnBack = findViewById(R.id.btnBack);
 
-        tvCountry.setText(Hawk.get(Constant.COUNTRY,""));
-        tvName.setText(Hawk.get(Constant.NAME,""));
-        tvFamily.setText(Hawk.get(Constant.FAMILY,""));
-        tvAge.setText(Hawk.get(Constant.AGE,""));
-        tvEmail.setText(Hawk.get(Constant.EMAIL,""));
-        tvPhone.setText(Hawk.get(Constant.PHONE,""));
+        Intent intent = getIntent();
+        int clickedItemIndex = Integer.valueOf(intent.getStringExtra("clickedItemIndex"));
+
+        ArrayList<User> usersInfo = Hawk.get("UsersInfoList");
+
+        tvCountry.setText(usersInfo.get(clickedItemIndex).getCountry());
+        tvName.setText(usersInfo.get(clickedItemIndex).getName());
+        tvFamily.setText(usersInfo.get(clickedItemIndex).getFamily());
+        tvAge.setText(String.valueOf(usersInfo.get(clickedItemIndex).getAge()));
+        tvEmail.setText(usersInfo.get(clickedItemIndex).getEmail());
+        tvPhone.setText(usersInfo.get(clickedItemIndex).getPhone());
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
