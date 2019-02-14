@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.talaeeandroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,10 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RecyclerViewActivity">
-
-        </activity>
-        <activity android:name=".SharedPreferencesTaskFirstActivity">
+        <activity android:name=".WebViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -20,11 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LinearLayoutActivity" />
-        <activity android:name=".Relative" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".IntentTaskFirstActivity" />
-        <activity android:name=".IntentTaskSecondActivity" />
+        <activity android:name=".RecyclerViewActivity"></activity>
+        <activity android:name=".SharedPreferencesTaskFirstActivity"></activity>
+        <activity android:name=".LinearLayoutActivity"></activity>
+        <activity android:name=".Relative"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".IntentTaskFirstActivity"></activity>
+        <activity android:name=".IntentTaskSecondActivity"></activity>
     </application>
 
 </manifest>
