@@ -57,8 +57,9 @@ public class IntentTaskSecondActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentBack = new Intent(IntentTaskSecondActivity.this, SharedPreferencesTaskFirstActivity.class);
-                startActivity(intentBack);
+//                Intent intentBack = new Intent(IntentTaskSecondActivity.this, SharedPreferencesTaskFirstActivity.class);
+//                startActivity(intentBack);
+                finish();
             }
         });
     }

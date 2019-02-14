@@ -39,8 +39,9 @@ public class RecyclerViewActivity extends AppCompatActivity implements UserInfoA
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentToEditActivity = new Intent(RecyclerViewActivity.this, SharedPreferencesTaskFirstActivity.class);
-                startActivity(intentToEditActivity);
+//                Intent intentToEditActivity = new Intent(RecyclerViewActivity.this, SharedPreferencesTaskFirstActivity.class);
+//                startActivity(intentToEditActivity);
+                finish();
             }
         });
 
