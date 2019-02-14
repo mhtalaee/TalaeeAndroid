@@ -10,8 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".WebViewActivity">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".NavigationDrawerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -19,13 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecyclerViewActivity"></activity>
-        <activity android:name=".SharedPreferencesTaskFirstActivity"></activity>
-        <activity android:name=".LinearLayoutActivity"></activity>
-        <activity android:name=".Relative"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".IntentTaskFirstActivity"></activity>
-        <activity android:name=".IntentTaskSecondActivity"></activity>
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".SharedPreferencesTaskFirstActivity" />
+        <activity android:name=".LinearLayoutActivity" />
+        <activity android:name=".Relative" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".IntentTaskFirstActivity" />
+        <activity android:name=".IntentTaskSecondActivity" />
     </application>
 
 </manifest>
