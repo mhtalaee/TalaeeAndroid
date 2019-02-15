@@ -44,6 +44,7 @@ public class UserInfoAdapter extends RecyclerView.Adapter<UserInfoAdapter.UserIn
         holder.tvUserInfoFamily.setText(user.getFamily());
         holder.tvUserInfoAge.setText("Age: ".concat(String.valueOf(user.getAge())));
         try {
+
             holder.imgCountry.setImageResource(R.drawable.class.getField(user.getCountry().toLowerCase()).getInt(null));
         } catch (NoSuchFieldException | IllegalAccessException e) {
             holder.imgCountry.setImageResource(R.drawable.usa);
