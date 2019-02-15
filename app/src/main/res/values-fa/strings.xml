@@ -37,5 +37,9 @@
     <string name="lNewUser">کاربر جدید</string>
     <string name="lUsersList">لیست کاربران</string>
     <string name="lClearList">پاک کردن</string>
+    <string name="enter_city_name">نام شهر...</string>
+    <string name="get_times">گرفتن زمان</string>
+    <string name="timings">اوقات شرعی</string>
+
 
 </resources>

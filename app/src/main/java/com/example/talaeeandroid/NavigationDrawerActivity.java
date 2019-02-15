@@ -24,6 +24,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
     private Button btnEdit;
     private Button btnUsersList;
     private Button btnClearList;
+    private Button btnTimings;
 
 
     @Override
@@ -36,9 +37,10 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         btnEdit = findViewById(R.id.btnEdit);
         btnUsersList = findViewById(R.id.btnUsersList);
         btnClearList = findViewById(R.id.btnClearList);
+        btnTimings = findViewById(R.id.btnTimings);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
 
         btnDrawer.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +90,14 @@ public class NavigationDrawerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Hawk.deleteAll();
+            }
+        });
+
+        btnTimings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentToTimingsActivity = new Intent(NavigationDrawerActivity.this, ConnectingToTheInternetAcrivity.class);
+                startActivity(intentToTimingsActivity);
             }
         });
     }

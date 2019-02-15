@@ -37,5 +37,18 @@
     <string name="lNewUser">New User</string>
     <string name="lUsersList">Users List</string>
     <string name="lClearList">Clear List</string>
+    <string name="enter_city_name">Enter City Name...</string>
+    <string name="get_times">Get Times</string>
+    <string name="city_name" translatable="false">City Name</string>
+    <string name="lFajr" translatable="false">Fajr:</string>
+    <string name="lSunrise" translatable="false">Sunrise:</string>
+    <string name="ldhuhr" translatable="false">Dhuhr:</string>
+    <string name="lasr" translatable="false">Asr:</string>
+    <string name="lsunset" translatable="false">Sunset:</string>
+    <string name="lmaghrib" translatable="false">Maghrib:</string>
+    <string name="lisha" translatable="false">Isha:</string>
+    <string name="lImsak" translatable="false">Imsak:</string>
+    <string name="lmidnight" translatable="false">Midnight:</string>
+    <string name="timings">Timings</string>
 
 </resources>
