@@ -3,6 +3,7 @@
     package="com.example.talaeeandroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +30,12 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".IntentTaskFirstActivity" />
         <activity android:name=".IntentTaskSecondActivity" />
+
+        <receiver android:name=".MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
