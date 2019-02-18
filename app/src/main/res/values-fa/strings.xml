@@ -40,6 +40,10 @@
     <string name="enter_city_name">نام شهر...</string>
     <string name="get_times">گرفتن زمان</string>
     <string name="timings">اوقات شرعی</string>
+    <string name="camera">دوربین</string>
+    <string name="open_camera">فعالسازی دوربین</string>
+    <string name="lYes">بله</string>
+    <string name="lNo">خیر</string>
 
 
 </resources>

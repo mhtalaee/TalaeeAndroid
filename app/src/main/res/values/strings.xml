@@ -50,5 +50,9 @@
     <string name="lImsak" translatable="false">Imsak:</string>
     <string name="lmidnight" translatable="false">Midnight:</string>
     <string name="timings">Timings</string>
+    <string name="camera">Camera</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="lYes">Yes</string>
+    <string name="lNo">No</string>
 
 </resources>
