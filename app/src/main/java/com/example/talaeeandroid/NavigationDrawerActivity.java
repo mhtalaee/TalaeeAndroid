@@ -25,6 +25,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
     private Button btnUsersList;
     private Button btnClearList;
     private Button btnTimings;
+    private Button btnCamera;
 
 
     @Override
@@ -38,6 +39,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         btnUsersList = findViewById(R.id.btnUsersList);
         btnClearList = findViewById(R.id.btnClearList);
         btnTimings = findViewById(R.id.btnTimings);
+        btnCamera = findViewById(R.id.btnCamera);
 
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -54,12 +56,12 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
                     @Override
                     public void onDrawerOpened(@NonNull View drawerView) {
-                        Toast.makeText(NavigationDrawerActivity.this,"Drawer Opend!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NavigationDrawerActivity.this, "Drawer Opend!", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onDrawerClosed(@NonNull View drawerView) {
-                        Toast.makeText(NavigationDrawerActivity.this,"Drawer Closed!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NavigationDrawerActivity.this, "Drawer Closed!", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -98,6 +100,14 @@ public class NavigationDrawerActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intentToTimingsActivity = new Intent(NavigationDrawerActivity.this, ConnectingToTheInternetAcrivity.class);
                 startActivity(intentToTimingsActivity);
+            }
+        });
+
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentToAlertAndPermissionActivity = new Intent(NavigationDrawerActivity.this, AlertDialogAndPermissionActivity.class);
+                startActivity(intentToAlertAndPermissionActivity);
             }
         });
     }
