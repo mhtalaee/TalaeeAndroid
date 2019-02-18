@@ -126,6 +126,7 @@
             android:layout_height="50dp"
             android:background="@drawable/rounded_bg"
             android:hint="@string/enter_email"
+            android:autofillHints="emailAddress"
             android:inputType="textEmailAddress" />
     </LinearLayout>
 
