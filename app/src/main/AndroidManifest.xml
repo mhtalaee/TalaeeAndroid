@@ -31,11 +31,11 @@
         <activity android:name=".IntentTaskFirstActivity" />
         <activity android:name=".IntentTaskSecondActivity" />
 
-        <receiver android:name=".MyBroadcastReceiver">
-            <intent-filter>
-                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-            </intent-filter>
-        </receiver>
+        <!--<receiver android:name=".MyBroadcastReceiver">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.AIRPLANE_MODE" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
     </application>
 
 </manifest>

@@ -28,6 +28,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
     private Button btnClearList;
     private Button btnTimings;
     private Button btnCamera;
+    MyBroadcastReceiver receiver;
 
 
     @Override
@@ -48,7 +49,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.wifi.WIFI_STATE_CHANGED");
-        MyBroadcastReceiver receiver = new MyBroadcastReceiver();
+        receiver = new MyBroadcastReceiver();
         registerReceiver(receiver, intentFilter);
 
 
@@ -117,5 +118,11 @@ public class NavigationDrawerActivity extends AppCompatActivity {
                 startActivity(intentToAlertAndPermissionActivity);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(receiver);
+        super.onDestroy();
     }
 }
