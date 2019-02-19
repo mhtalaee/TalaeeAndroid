@@ -20,12 +20,13 @@
         <!--android:background="?attr/colorPrimary"-->
         <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />-->
 
-        <Button
-            android:id="@+id/btnDrawer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:text="Open Drawer" />
+        <!--<Button-->
+            <!--android:id="@+id/btnDrawer"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="20dp"-->
+            <!--android:text="Open Drawer"-->
+            <!--android:textAllCaps="false"/>-->
     </LinearLayout>
 
     <LinearLayout
@@ -44,7 +45,8 @@
             android:background="#FFFFFF"
             android:text="@string/lNewUser"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/btnUsersList"
@@ -54,7 +56,8 @@
             android:background="#FFFFFF"
             android:text="@string/lUsersList"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/btnClearList"
@@ -64,7 +67,8 @@
             android:background="#FFFFFF"
             android:text="@string/lClearList"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/btnTimings"
@@ -74,7 +78,8 @@
             android:background="#FFFFFF"
             android:text="@string/timings"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
 
         <Button
             android:id="@+id/btnCamera"
@@ -84,7 +89,8 @@
             android:background="#FFFFFF"
             android:text="@string/camera"
             android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 

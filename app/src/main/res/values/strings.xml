@@ -54,5 +54,7 @@
     <string name="open_camera">Open Camera</string>
     <string name="lYes">Yes</string>
     <string name="lNo">No</string>
+    <string name="lOpen" translatable="false">Open</string>
+    <string name="lClose" translatable="false">Close</string>
 
 </resources>

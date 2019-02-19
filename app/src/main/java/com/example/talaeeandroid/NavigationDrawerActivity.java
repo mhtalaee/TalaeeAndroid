@@ -1,6 +1,7 @@
 package com.example.talaeeandroid;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -10,7 +11,9 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -22,14 +25,15 @@ import com.orhanobut.hawk.Hawk;
 public class NavigationDrawerActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private Button btnDrawer;
+//    private Button btnDrawer;
     private Button btnEdit;
     private Button btnUsersList;
     private Button btnClearList;
     private Button btnTimings;
     private Button btnCamera;
-    MyBroadcastReceiver receiver;
-
+    private MyBroadcastReceiver receiver;
+    private Boolean hasUserClickedOnBack = Boolean.FALSE;
+    private ActionBarDrawerToggle mToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_navigation_drawer);
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
-        btnDrawer = findViewById(R.id.btnDrawer);
+//        btnDrawer = findViewById(R.id.btnDrawer);
         btnEdit = findViewById(R.id.btnEdit);
         btnUsersList = findViewById(R.id.btnUsersList);
         btnClearList = findViewById(R.id.btnClearList);
@@ -53,32 +57,37 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         registerReceiver(receiver, intentFilter);
 
 
-        btnDrawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
-                    @Override
-                    public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
-                    }
+        mToggle = new ActionBarDrawerToggle(NavigationDrawerActivity.this,mDrawerLayout, R.string.lOpen, R.string.lClose);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-                    @Override
-                    public void onDrawerOpened(@NonNull View drawerView) {
-                        Toast.makeText(NavigationDrawerActivity.this, "Drawer Opend!", Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void onDrawerClosed(@NonNull View drawerView) {
-                        Toast.makeText(NavigationDrawerActivity.this, "Drawer Closed!", Toast.LENGTH_LONG).show();
-                    }
-
-                    @Override
-                    public void onDrawerStateChanged(int newState) {
-
-                    }
-                });
-            }
-        });
+//        btnDrawer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mDrawerLayout.openDrawer(GravityCompat.START);
+//                mDrawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+//                    @Override
+//                    public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+//                    }
+//
+//                    @Override
+//                    public void onDrawerOpened(@NonNull View drawerView) {
+//                        Toast.makeText(NavigationDrawerActivity.this, "Drawer Opend!", Toast.LENGTH_LONG).show();
+//                    }
+//
+//                    @Override
+//                    public void onDrawerClosed(@NonNull View drawerView) {
+//                        Toast.makeText(NavigationDrawerActivity.this, "Drawer Closed!", Toast.LENGTH_LONG).show();
+//                    }
+//
+//                    @Override
+//                    public void onDrawerStateChanged(int newState) {
+//
+//                    }
+//                });
+//            }
+//        });
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,8 +130,36 @@ public class NavigationDrawerActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+
+        if (!hasUserClickedOnBack) {
+            Toast.makeText(NavigationDrawerActivity.this, "Please click back again", Toast.LENGTH_SHORT).show();
+            hasUserClickedOnBack = Boolean.TRUE;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    hasUserClickedOnBack = Boolean.FALSE;
+                }
+            }, 2000);
+        } else {
+            super.onBackPressed();
+
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         unregisterReceiver(receiver);
         super.onDestroy();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
