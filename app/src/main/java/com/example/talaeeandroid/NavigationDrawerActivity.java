@@ -1,22 +1,16 @@
 package com.example.talaeeandroid;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.talaeeandroid.content.Constant;
@@ -55,7 +49,6 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         intentFilter.addAction("android.net.wifi.WIFI_STATE_CHANGED");
         receiver = new MyBroadcastReceiver();
         registerReceiver(receiver, intentFilter);
-
 
         mToggle = new ActionBarDrawerToggle(NavigationDrawerActivity.this,mDrawerLayout, R.string.lOpen, R.string.lClose);
         mDrawerLayout.addDrawerListener(mToggle);
