@@ -3,12 +3,14 @@ package com.example.talaeeandroid;
 import androidx.appcompat.app.AppCompatActivity;
 import cz.msebera.android.httpclient.Header;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +44,8 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
     TextView tvMidnight;
     String timingsByCityURL;
     Button btnBack;
+    //    ProgressDialog progress;
+    ProgressBar pb;
 
     static final String timingSiteURL = "http://api.aladhan.com/v1/timingsByCity?city=";
     static final String timingSiteFixedVars = "&country=Iran&method=8";
@@ -64,6 +68,7 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
         tvImsak = findViewById(R.id.tvImsak);
         tvMidnight = findViewById(R.id.tvMidnight);
         btnBack = findViewById(R.id.btnBack);
+        pb = findViewById(R.id.pbLoading);
 
 
         btnGetTimes.setOnClickListener(new View.OnClickListener() {
@@ -124,7 +129,12 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
 //                    }
 //                }, "GetTimingByCityThread").start();
 
+//                progress = new ProgressDialog(ConnectingToTheInternetAcrivity.this);
+//                progress.setMessage("Please Wait...");
+//                progress.setIndeterminate(false);
+//                progress.setCancelable(false);
                 AsyncHttpClient client = new AsyncHttpClient();
+
                 timingsByCityURL = timingSiteURL + etCityName.getText() + timingSiteFixedVars;
                 client.get(timingsByCityURL, new JsonHttpResponseHandler() {
 
@@ -134,12 +144,16 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
                     @Override
                     public void onStart() {
                         startTime = new Date();
+//                        progress.show();
+                        pb.setVisibility(ProgressBar.VISIBLE);
                         super.onStart();
                     }
 
                     @Override
                     public void onFinish() {
                         finishTime = new Date();
+//                        progress.dismiss();
+                        pb.setVisibility(ProgressBar.INVISIBLE);
                         super.onFinish();
                     }
 
