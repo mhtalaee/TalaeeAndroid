@@ -164,7 +164,7 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
                         PrayTimes prayTimes = gson.fromJson(response.toString(), PrayTimes.class);
                         Timings timings = prayTimes.getData().getTimings();
 
-                        long duration = (finishTime.getTime() - startTime.getTime()) / 1000;
+                        long duration = (finishTime.getTime() - startTime.getTime());
 
                         tvDuration.setText("Response Duration: " + String.valueOf(duration) + " milliseconds");
                         tvFajr.setText(timings.getFajr());
