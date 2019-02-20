@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AlertDialogAndPermissionActivity"></activity>
-        <activity android:name=".ConnectingToTheInternetAcrivity"></activity>
+        <activity android:name=".IMDBActivity"></activity>
+        <activity android:name=".AlertDialogAndPermissionActivity" />
+        <activity android:name=".ConnectingToTheInternetAcrivity" />
         <activity android:name=".NavigationDrawerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,12 +31,6 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".IntentTaskFirstActivity" />
         <activity android:name=".IntentTaskSecondActivity" />
-
-        <!--<receiver android:name=".MyBroadcastReceiver">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.AIRPLANE_MODE" />-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
     </application>
 
 </manifest>

@@ -56,5 +56,16 @@
     <string name="lNo">No</string>
     <string name="lOpen" translatable="false">Open</string>
     <string name="lClose" translatable="false">Close</string>
+    <string name="movie_name" translatable="false">Movie Name...</string>
+    <string name="movie_info" translatable="false">Movie Info</string>
+    <string name="lTitle" translatable="false">Title:</string>
+    <string name="lYear" translatable="false">Year:</string>
+    <string name="lGenre" translatable="false">Genre:</string>
+    <string name="lDirector" translatable="false">Director:</string>
+    <string name="lWriter" translatable="false">Writer:</string>
+    <string name="lActors" translatable="false">Actors:</string>
+    <string name="lAwards" translatable="false">Awards:</string>
+    <string name="lImdb" translatable="false">IMDB</string>
+
 
 </resources>

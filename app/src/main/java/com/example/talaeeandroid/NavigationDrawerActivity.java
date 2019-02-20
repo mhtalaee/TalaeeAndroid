@@ -19,11 +19,12 @@ import com.orhanobut.hawk.Hawk;
 public class NavigationDrawerActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-//    private Button btnDrawer;
+    //    private Button btnDrawer;
     private Button btnEdit;
     private Button btnUsersList;
     private Button btnClearList;
     private Button btnTimings;
+    private Button btnImdb;
     private Button btnCamera;
     private MyBroadcastReceiver receiver;
     private Boolean hasUserClickedOnBack = Boolean.FALSE;
@@ -40,6 +41,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         btnUsersList = findViewById(R.id.btnUsersList);
         btnClearList = findViewById(R.id.btnClearList);
         btnTimings = findViewById(R.id.btnTimings);
+        btnImdb = findViewById(R.id.btnImdb);
         btnCamera = findViewById(R.id.btnCamera);
 
 //        Toolbar toolbar = findViewById(R.id.toolbar);
@@ -50,7 +52,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         receiver = new MyBroadcastReceiver();
         registerReceiver(receiver, intentFilter);
 
-        mToggle = new ActionBarDrawerToggle(NavigationDrawerActivity.this,mDrawerLayout, R.string.lOpen, R.string.lClose);
+        mToggle = new ActionBarDrawerToggle(NavigationDrawerActivity.this, mDrawerLayout, R.string.lOpen, R.string.lClose);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -113,6 +115,14 @@ public class NavigationDrawerActivity extends AppCompatActivity {
             }
         });
 
+        btnImdb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentToIMDBActivity = new Intent(NavigationDrawerActivity.this, IMDBActivity.class);
+                startActivity(intentToIMDBActivity);
+            }
+        });
+
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +159,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(mToggle.onOptionsItemSelected(item)){
+        if (mToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
