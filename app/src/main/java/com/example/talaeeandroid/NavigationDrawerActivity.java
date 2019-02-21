@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.talaeeandroid.content.Constant;
+import com.example.talaeeandroid.database.OpenDBHelper;
 import com.orhanobut.hawk.Hawk;
 
 public class NavigationDrawerActivity extends AppCompatActivity {
@@ -34,7 +35,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
-
+        insertData();
         mDrawerLayout = findViewById(R.id.drawer_layout);
 //        btnDrawer = findViewById(R.id.btnDrawer);
         btnEdit = findViewById(R.id.btnEdit);
@@ -130,6 +131,13 @@ public class NavigationDrawerActivity extends AppCompatActivity {
                 startActivity(intentToAlertAndPermissionActivity);
             }
         });
+    }
+
+    private void insertData() {
+        OpenDBHelper openDBHelper = new OpenDBHelper(NavigationDrawerActivity.this, "talaeeDB", null, 1);
+        openDBHelper.inserToDB("tehran","5:15" , "6:30");
+        String result = openDBHelper.getTimings();
+        Toast.makeText(this, result, Toast.LENGTH_LONG).show();
     }
 
     @Override
