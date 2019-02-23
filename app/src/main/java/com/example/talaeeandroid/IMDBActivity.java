@@ -19,13 +19,10 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
-import java.util.Date;
-
 public class IMDBActivity extends AppCompatActivity {
 
     Button btnGetMovieInfo;
     EditText etMovieName;
-//    TextView tvDuration;
     TextView tvTitle;
     TextView tvYear;
     TextView tvGenre;
@@ -50,7 +47,6 @@ public class IMDBActivity extends AppCompatActivity {
 
         btnGetMovieInfo = findViewById(R.id.btnGetMovieInfo);
         etMovieName = findViewById(R.id.etMovieName);
-//        tvDuration = findViewById(R.id.tvDuration);
         tvTitle = findViewById(R.id.tvTitle);
         tvYear = findViewById(R.id.tvYear);
         tvGenre = findViewById(R.id.tvGenre);
@@ -72,19 +68,14 @@ public class IMDBActivity extends AppCompatActivity {
                 timingsByCityURL = timingSiteURL + etMovieName.getText() + timingSiteFixedVars;
                 client.get(timingsByCityURL, new JsonHttpResponseHandler() {
 
-                    Date startTime;
-                    Date finishTime;
-
                     @Override
                     public void onStart() {
-                        startTime = new Date();
                         pb.setVisibility(ProgressBar.VISIBLE);
                         super.onStart();
                     }
 
                     @Override
                     public void onFinish() {
-                        finishTime = new Date();
                         pb.setVisibility(ProgressBar.INVISIBLE);
                         super.onFinish();
                     }
@@ -95,9 +86,6 @@ public class IMDBActivity extends AppCompatActivity {
                         Gson gson = new Gson();
                         ImdbMovie imdbMovie = gson.fromJson(response.toString(), ImdbMovie.class);
 
-                        long duration = (finishTime.getTime() - startTime.getTime());
-
-//                        tvDuration.setText("Response Duration: " + String.valueOf(duration) + " milliseconds");
                         tvTitle.setText(imdbMovie.getTitle());
                         tvYear.setText(imdbMovie.getYear());
                         tvGenre.setText(imdbMovie.getGenre());
@@ -107,7 +95,6 @@ public class IMDBActivity extends AppCompatActivity {
                         tvCountry.setText(imdbMovie.getCountry());
                         tvAwards.setText(imdbMovie.getAwards());
                         Picasso.get().load(imdbMovie.getPoster()).into(imgMoviePoster);
-
 
                         super.onSuccess(statusCode, headers, response);
                     }

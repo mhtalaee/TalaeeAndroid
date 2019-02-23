@@ -39,10 +39,19 @@ public class OpenDBHelper extends SQLiteOpenHelper {
 
     }
 
-    public void inserToDB(String cityName, String fajr, String sunrise) {
+    public void inserTimingsToDB(String cityName, String fajr, String sunrise, String dhuhr, String asr, String sunset, String maghrib, String isha, String imsak, String midnight) {
         String insertQuery = "INSERT INTO " + TABLE_NAME +
-                "(city_name , fajr)" +
-                "VALUES( '" + cityName + "' , '" + fajr + " ')";
+                "(city_name , fajr , sunrise , dhuhr, asr, sunset, maghrib, isha, imsak, midnight)" +
+                "VALUES( '" + cityName + "' " +
+                ", '" + fajr + " ' " +
+                ", '" + sunrise + "' " +
+                ", '" + dhuhr + "' " +
+                ", '" + asr + "' " +
+                ", '" + sunset + "' " +
+                ", '" + maghrib + "' " +
+                ", '" + isha + "' " +
+                ", '" + imsak + "' " +
+                ", '" + midnight + "')";
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(insertQuery);
         db.close();
@@ -50,10 +59,10 @@ public class OpenDBHelper extends SQLiteOpenHelper {
 
     public String getTimings() {
         String test = "";
-        SQLiteDatabase db = this. getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT city_name, fajr from " + TABLE_NAME, null);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * from " + TABLE_NAME, null);
         while (cursor.moveToNext()) {
-            test += cursor.getString(0)+"\n" + cursor.getString(1)+"\n";
+            test += cursor.getString(0) + "\n" + cursor.getString(1) + "\n";
         }
         db.close();
         return test;

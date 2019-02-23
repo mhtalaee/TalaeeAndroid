@@ -1,9 +1,15 @@
 package com.example.talaeeandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import cz.msebera.android.httpclient.Header;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -14,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.talaeeandroid.database.OpenDBHelper;
 import com.example.talaeeandroid.model.timings.PrayTimes;
 import com.example.talaeeandroid.model.timings.Timings;
 import com.google.gson.Gson;
@@ -32,7 +39,6 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
 
     Button btnGetTimes;
     EditText etCityName;
-    TextView tvDuration;
     TextView tvFajr;
     TextView tvSunrise;
     TextView tvDhuhr;
@@ -46,7 +52,7 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
     Button btnBack;
     //    ProgressDialog progress;
     ProgressBar pb;
-
+    public static final String DB_NAME = "myDB";
     static final String timingSiteURL = "http://api.aladhan.com/v1/timingsByCity?city=";
     static final String timingSiteFixedVars = "&country=Iran&method=8";
 
@@ -57,7 +63,6 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
 
         btnGetTimes = findViewById(R.id.btnGetTimes);
         etCityName = findViewById(R.id.etCityName);
-        tvDuration = findViewById(R.id.tvDuration);
         tvFajr = findViewById(R.id.tvFajr);
         tvSunrise = findViewById(R.id.tvSunrise);
         tvDhuhr = findViewById(R.id.tvDhuhr);
@@ -69,7 +74,6 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
         tvMidnight = findViewById(R.id.tvMidnight);
         btnBack = findViewById(R.id.btnBack);
         pb = findViewById(R.id.pbLoading);
-
 
         btnGetTimes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,21 +142,14 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
                 timingsByCityURL = timingSiteURL + etCityName.getText() + timingSiteFixedVars;
                 client.get(timingsByCityURL, new JsonHttpResponseHandler() {
 
-                    Date startTime;
-                    Date finishTime;
-
                     @Override
                     public void onStart() {
-                        startTime = new Date();
-//                        progress.show();
                         pb.setVisibility(ProgressBar.VISIBLE);
                         super.onStart();
                     }
 
                     @Override
                     public void onFinish() {
-                        finishTime = new Date();
-//                        progress.dismiss();
                         pb.setVisibility(ProgressBar.INVISIBLE);
                         super.onFinish();
                     }
@@ -164,9 +161,6 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
                         PrayTimes prayTimes = gson.fromJson(response.toString(), PrayTimes.class);
                         Timings timings = prayTimes.getData().getTimings();
 
-                        long duration = (finishTime.getTime() - startTime.getTime());
-
-                        tvDuration.setText("Response Duration: " + String.valueOf(duration) + " milliseconds");
                         tvFajr.setText(timings.getFajr());
                         tvSunrise.setText(timings.getSunrise());
                         tvDhuhr.setText(timings.getDhuhr());
@@ -176,6 +170,12 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
                         tvIsha.setText(timings.getIsha());
                         tvImsak.setText(timings.getImsak());
                         tvMidnight.setText(timings.getMidnight());
+
+                        OpenDBHelper dbHelper = new OpenDBHelper(ConnectingToTheInternetAcrivity.this, DB_NAME, null, 1);
+                        dbHelper.inserTimingsToDB(etCityName.getText().toString(), timings.getFajr(), timings.getSunrise(), timings.getDhuhr(), timings.getAsr(), timings.getSunset(),
+                                timings.getMaghrib(), timings.getIsha(), timings.getImsak(), timings.getMidnight());
+
+                        notifyUser(etCityName.getText().toString());
 
                         super.onSuccess(statusCode, headers, response);
                     }
@@ -197,6 +197,29 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void notifyUser(String cityName) {
+        Intent intent = new Intent(getApplicationContext(), NavigationDrawerActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("default",
+                    "insertData",
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("Insert Data");
+            mNotificationManager.createNotificationChannel(channel);
+        }
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(),
+                "default")
+                .setSmallIcon(R.mipmap.ic_launcher) // notification icon
+                .setContentTitle("Save timings") // title for notification
+                .setContentText( cityName + " timings data saved")// message for notification
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true); // clear notification after click
+        mNotificationManager.notify(0, mBuilder.build());
     }
 
 }
