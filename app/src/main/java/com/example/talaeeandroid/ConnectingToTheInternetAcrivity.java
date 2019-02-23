@@ -2,6 +2,7 @@ package com.example.talaeeandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import cz.msebera.android.httpclient.Header;
 
 import android.app.NotificationChannel;
@@ -10,6 +11,7 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -216,9 +218,12 @@ public class ConnectingToTheInternetAcrivity extends AppCompatActivity {
                 "default")
                 .setSmallIcon(R.mipmap.ic_launcher) // notification icon
                 .setContentTitle("Save timings") // title for notification
-                .setContentText( cityName + " timings data saved")// message for notification
+                .setContentText(cityName + " timings data saved")// message for notification
                 .setContentIntent(pendingIntent)
-                .setAutoCancel(true); // clear notification after click
+                .setAutoCancel(true) // clear notification after click
+                .setBadgeIconType(NotificationCompat.BADGE_ICON_LARGE)
+                .setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent))
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.database));
         mNotificationManager.notify(0, mBuilder.build());
     }
 
