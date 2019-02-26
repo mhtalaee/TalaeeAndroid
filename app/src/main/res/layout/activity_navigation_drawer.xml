@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
@@ -10,23 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorAccent"
-        android:gravity="end|center"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <!--<androidx.appcompat.widget.Toolbar-->
-        <!--android:id="@+id/toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="?attr/colorPrimary"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />-->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/sun" />
 
-        <!--<Button-->
-            <!--android:id="@+id/btnDrawer"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginEnd="20dp"-->
-            <!--android:text="Open Drawer"-->
-            <!--android:textAllCaps="false"/>-->
     </LinearLayout>
 
     <LinearLayout
@@ -44,9 +39,9 @@
             android:layout_margin="20dp"
             android:background="#FFFFFF"
             android:text="@string/lNewUser"
+            android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textAllCaps="false"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnUsersList"
@@ -55,9 +50,9 @@
             android:layout_margin="20dp"
             android:background="#FFFFFF"
             android:text="@string/lUsersList"
+            android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textAllCaps="false"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnClearList"
@@ -66,9 +61,9 @@
             android:layout_margin="20dp"
             android:background="#FFFFFF"
             android:text="@string/lClearList"
+            android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textAllCaps="false"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnTimings"
@@ -77,9 +72,9 @@
             android:layout_margin="20dp"
             android:background="#FFFFFF"
             android:text="@string/timings"
+            android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textAllCaps="false"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnImdb"
@@ -88,9 +83,9 @@
             android:layout_margin="20dp"
             android:background="#FFFFFF"
             android:text="@string/lImdb"
+            android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textAllCaps="false"/>
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnCamera"
@@ -99,9 +94,9 @@
             android:layout_margin="20dp"
             android:background="#FFFFFF"
             android:text="@string/camera"
+            android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textAllCaps="false"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 

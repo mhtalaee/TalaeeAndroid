@@ -20,7 +20,6 @@ import com.orhanobut.hawk.Hawk;
 public class NavigationDrawerActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    //    private Button btnDrawer;
     private Button btnEdit;
     private Button btnUsersList;
     private Button btnClearList;
@@ -36,16 +35,12 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_drawer);
         mDrawerLayout = findViewById(R.id.drawer_layout);
-//        btnDrawer = findViewById(R.id.btnDrawer);
         btnEdit = findViewById(R.id.btnEdit);
         btnUsersList = findViewById(R.id.btnUsersList);
         btnClearList = findViewById(R.id.btnClearList);
         btnTimings = findViewById(R.id.btnTimings);
         btnImdb = findViewById(R.id.btnImdb);
         btnCamera = findViewById(R.id.btnCamera);
-
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.wifi.WIFI_STATE_CHANGED");
