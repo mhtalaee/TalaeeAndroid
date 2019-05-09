@@ -36,13 +36,15 @@ Talaee Repository
     ArrayList<Object> arrL = new ArrayList<Object>(2); //arrayList with initial capacity 2
 </code></pre>
 
+
 3. Java List vs ArrayList
 
-   List:
+List:
    List is an interface which extends Collection.
    A list object can be created as below:
-   <pre><code>
+
+<pre><code>
    List a= new ArrayList();
-   </code></pre>
+</code></pre>
 
         
