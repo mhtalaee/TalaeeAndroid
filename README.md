@@ -12,11 +12,11 @@ Talaee Repository
    
    array members are accessed using []
    
-   <code>
+   <pre><code>
    int[] arr = new int[2]; 
         arr[0] = 1; 
         arr[1] = 2; 
-    </code>
+    </code></pre>
         
    int[] arr = new int[2]{2,3}; 
    
