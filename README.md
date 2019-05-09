@@ -31,10 +31,10 @@ Talaee Repository
     
     the actual objects are not stored at contiguous locations. References of the actual objects are stored at contiguous locations.
 
-<pre><code>
+<pre><code>        
     ArrayList<Object> arrL = new ArrayList<Object>(); 
     ArrayList<Object> arrL = new ArrayList<Object>(2); //arrayList with initial capacity 2
-</code></pre>
+</code></pre>   
 
 
 3. Java List vs ArrayList
@@ -43,8 +43,6 @@ List:
    List is an interface which extends Collection.
    A list object can be created as below:
 
-<pre><code>
+<pre><code>        
    List a= new ArrayList();
-</code></pre>
-
-        
+</code></pre>   
