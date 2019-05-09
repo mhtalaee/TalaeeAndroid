@@ -12,15 +12,11 @@ Talaee Repository
    
    array members are accessed using []
    
-   <pre><code>
-   int[] arr = new int[2]; 
-        arr[0] = 1; 
-        arr[1] = 2; 
-    </code></pre>
+         int[] arr = new int[2]; 
+              arr[0] = 1; 
+              arr[1] = 2; 
         
-<pre><code>        
-   int[] arr = new int[2]{2,3}; 
-</code></pre>   
+         int[] arr = new int[2]{2,3}; 
    
    
 2. Java ArrayList:
@@ -31,10 +27,8 @@ Talaee Repository
     
     the actual objects are not stored at contiguous locations. References of the actual objects are stored at contiguous locations.
 
-         <pre><code>        
             ArrayList<Object> arrL = new ArrayList<Object>(); 
             ArrayList<Object> arrL = new ArrayList<Object>(2); //arrayList with initial capacity 2
-         </code></pre>   
 
 
 3. Java List vs ArrayList
@@ -43,6 +37,4 @@ Talaee Repository
         List is an interface which extends Collection.
         A list object can be created as below:
         
-         <pre><code>        
           List a= new ArrayList();
-         </code></pre>   
