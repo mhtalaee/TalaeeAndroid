@@ -18,7 +18,9 @@ Talaee Repository
         arr[1] = 2; 
     </code></pre>
         
+<pre><code>        
    int[] arr = new int[2]{2,3}; 
+</code></pre>   
    
    
 2. Java ArrayList:
@@ -28,8 +30,9 @@ Talaee Repository
     only supports object type
     
     the actual objects are not stored at contiguous locations. References of the actual objects are stored at contiguous locations.
-    
+
+<pre><code>
     ArrayList<Object> arrL = new ArrayList<Object>(); 
-    
     ArrayList<Object> arrL = new ArrayList<Object>(2); //arrayList with initial capacity 2
+</code></pre>
         
