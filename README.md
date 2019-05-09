@@ -25,7 +25,9 @@ Talaee Repository
     
     only supports object type
     
-    the actual objects are not stored at contiguous locations. References of the actual objects are stored at contiguous locations.
+    the actual objects are not stored at contiguous locations. 
+    
+    References of the actual objects are stored at contiguous locations.
 
             ArrayList<Object> arrL = new ArrayList<Object>(); 
             ArrayList<Object> arrL = new ArrayList<Object>(2); //arrayList with initial capacity 2
@@ -33,8 +35,10 @@ Talaee Repository
 
 3. Java List vs ArrayList
 
-      List:
-        List is an interface which extends Collection.
-        A list object can be created as below:
+    List:
+    
+      List is an interface which extends Collection.
+        
+      A list object can be created as below:
         
           List a= new ArrayList();
