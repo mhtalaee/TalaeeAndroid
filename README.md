@@ -42,3 +42,10 @@ Talaee Repository
       A list object can be created as below:
         
           List a= new ArrayList();
+          
+    ArrayList:
+     
+      ArrayList is a class which implements the List interface.
+      
+      Manipulation is slow in array list as shifting needs to be done if any element is removed from a list
+
