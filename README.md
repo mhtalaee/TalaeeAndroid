@@ -48,4 +48,25 @@ Talaee Repository
       ArrayList is a class which implements the List interface.
       
       Manipulation is slow in array list as shifting needs to be done if any element is removed from a list
+      
+4. Advantage of Java Generics
+   Type-safety
+   Type casting is not required
+   Compile-Time Checking
+   
+   Non-Generic collection
+   
+         List list = new ArrayList();
+         list.add("hello");
+         list.add(1);
+         String str = (String) list.get(0);
+         
+   Generic collection
+   
+         List<String> genericList = new ArrayList<String>();
+         genericList.add("hello");
+         genericList.add(1); //runtime error because of wrong data type
+         String gStr = genericList.get(0); //no type mapping is requird
+         
+         
 
