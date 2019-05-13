@@ -68,5 +68,21 @@ Talaee Repository
          genericList.add(1); //runtime error because of wrong data type
          String gStr = genericList.get(0); //no type mapping is requird
          
+5. Generic class
+
+         class Test<T>     //<T> means that youe must define type parameter when making an instance of the class
+         { 
+            T obj; 
+            Test(T obj) {    // constructor 
+            this.obj = obj;  
+            }
+         }  
+
+   Make instance of this generic class
+   
+         Test <Integer> iObj = new Test<Integer>(15); 
+         Test <String> sObj = new Test<String>("GeeksForGeeks"); 
+
+         
          
 
