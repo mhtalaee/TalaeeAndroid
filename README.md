@@ -73,7 +73,7 @@ Talaee Repository
          class Test<T>     //<T> means that youe must define type parameter when making an instance of the class
          { 
             T obj; 
-            Test(T obj) {    // constructor 
+            Test(T obj) {    // constructor that accept every type (String, Integer, Double, User defined types,...)
             this.obj = obj;  
             }
          }  
@@ -83,6 +83,39 @@ Talaee Repository
          Test <Integer> iObj = new Test<Integer>(15); 
          Test <String> sObj = new Test<String>("GeeksForGeeks"); 
 
+
+   Generic class with multiple type parameter
          
+         class Test<T, U> 
+            { 
+               T obj1;
+               U obj2;
+  
+               Test(T obj1, U obj2) 
+                  { 
+                     this.obj1 = obj1; 
+                     this.obj2 = obj2; 
+                  } 
+            } 
+            
+            
+   Make instance of this multiple type parameter generic class         
+      
+          new Test<String, Integer>("GfG", 15); 
+          
+          
+6. Generic Function          
+
+         static <T> void genericDisplay (T element) 
+            { 
+               System.out.println(element.getClass().getName() + " = " + element); 
+            }
+            
+   Call generic function
+         
+         genericDisplay(11); 
+         genericDisplay("GeeksForGeeks"); 
+         genericDisplay(1.0); 
+
          
 
