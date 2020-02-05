@@ -118,7 +118,8 @@ Talaee Repository
          genericDisplay(1.0); 
 
 7. Exception
-         1. finish app
+         when an exception is thrown:
+         1. app (code) is finished (break)
          2. log error
          
 
