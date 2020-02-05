@@ -117,5 +117,8 @@ Talaee Repository
          genericDisplay("GeeksForGeeks"); 
          genericDisplay(1.0); 
 
+7. Exception
+         1. finish app
+         2. log error
          
 
