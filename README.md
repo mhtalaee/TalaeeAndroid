@@ -122,4 +122,8 @@ Talaee Repository
          1. app (code) is finished (break)
          2. log error
          
+         Exception Types:
+            1. checked exception: are checked at compile time and must be listed in the throws part of the method signature if you don't handle them yourself (like  IOException and SQLException)
+            2.unchecked exception: are checked at run time (subclass of RunTime Exception) and doesn't have to be caught or thrown or anything (like NoSuchElementException and NullPointerException)
+         
 
